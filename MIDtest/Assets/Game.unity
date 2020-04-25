@@ -138,7 +138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4697453817444104, guid: e209b9e719437e145951c42cb3c16ae4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.03
+      value: 0.151
       objectReference: {fileID: 0}
     - target: {fileID: 4697453817444104, guid: e209b9e719437e145951c42cb3c16ae4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -664,7 +664,6 @@ GameObject:
   - component: {fileID: 1473644433}
   - component: {fileID: 1473644432}
   - component: {fileID: 1473644431}
-  - component: {fileID: 1473644435}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Untagged
@@ -746,22 +745,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &1473644435
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1473644430}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!1 &1584527955 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1347116199977322, guid: e209b9e719437e145951c42cb3c16ae4,
@@ -782,7 +765,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 36
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &1584527957
 MonoBehaviour:
@@ -825,6 +808,20 @@ MonoBehaviour:
   m_BehaviorName: CrazyBrain
   TeamId: 0
   m_UseChildSensors: 1
+--- !u!136 &1584527961
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584527955}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.32626504
+  m_Height: 1.800971
+  m_Direction: 1
+  m_Center: {x: 0.004411876, y: 0.8909373, z: 0}
 --- !u!1001 &1665849009
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -922,7 +919,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &1665849012
 MonoBehaviour:
