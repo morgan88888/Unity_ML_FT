@@ -1130,6 +1130,39 @@
         <para>The number of particles written to the input particle array (the number of particles currently alive).</para>
       </returns>
     </member>
+    <member name="M:UnityEngine.ParticleSystem.GetParticles(Unity.Collections.NativeArray`1&lt;UnityEngine.ParticleSystem/Particle&gt;)">
+      <summary>
+        <para>Gets the particles of this Particle System.</para>
+      </summary>
+      <param name="particles">Output particle buffer, containing the current particle state.</param>
+      <param name="size">The number of elements that are read from the Particle System.</param>
+      <param name="offset">The offset into the active particle list, from which to copy the particles.</param>
+      <returns>
+        <para>The number of particles written to the input particle array (the number of particles currently alive).</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.ParticleSystem.GetParticles(Unity.Collections.NativeArray`1&lt;UnityEngine.ParticleSystem/Particle&gt;,System.Int32)">
+      <summary>
+        <para>Gets the particles of this Particle System.</para>
+      </summary>
+      <param name="particles">Output particle buffer, containing the current particle state.</param>
+      <param name="size">The number of elements that are read from the Particle System.</param>
+      <param name="offset">The offset into the active particle list, from which to copy the particles.</param>
+      <returns>
+        <para>The number of particles written to the input particle array (the number of particles currently alive).</para>
+      </returns>
+    </member>
+    <member name="M:UnityEngine.ParticleSystem.GetParticles(Unity.Collections.NativeArray`1&lt;UnityEngine.ParticleSystem/Particle&gt;,System.Int32,System.Int32)">
+      <summary>
+        <para>Gets the particles of this Particle System.</para>
+      </summary>
+      <param name="particles">Output particle buffer, containing the current particle state.</param>
+      <param name="size">The number of elements that are read from the Particle System.</param>
+      <param name="offset">The offset into the active particle list, from which to copy the particles.</param>
+      <returns>
+        <para>The number of particles written to the input particle array (the number of particles currently alive).</para>
+      </returns>
+    </member>
     <member name="M:UnityEngine.ParticleSystem.GetPlaybackState">
       <summary>
         <para>Returns all the data relating to the current internal state of the Particle System.</para>
@@ -2185,6 +2218,30 @@
       <param name="offset">The offset into the destination particle list, to assign these particles.</param>
     </member>
     <member name="M:UnityEngine.ParticleSystem.SetParticles(UnityEngine.ParticleSystem/Particle[],System.Int32,System.Int32)">
+      <summary>
+        <para>Sets the particles of this Particle System.</para>
+      </summary>
+      <param name="particles">Input particle buffer, containing the desired particle state.</param>
+      <param name="size">The number of elements in the particles array that is written to the Particle System.</param>
+      <param name="offset">The offset into the destination particle list, to assign these particles.</param>
+    </member>
+    <member name="M:UnityEngine.ParticleSystem.SetParticles(Unity.Collections.NativeArray`1&lt;UnityEngine.ParticleSystem/Particle&gt;)">
+      <summary>
+        <para>Sets the particles of this Particle System.</para>
+      </summary>
+      <param name="particles">Input particle buffer, containing the desired particle state.</param>
+      <param name="size">The number of elements in the particles array that is written to the Particle System.</param>
+      <param name="offset">The offset into the destination particle list, to assign these particles.</param>
+    </member>
+    <member name="M:UnityEngine.ParticleSystem.SetParticles(Unity.Collections.NativeArray`1&lt;UnityEngine.ParticleSystem/Particle&gt;,System.Int32)">
+      <summary>
+        <para>Sets the particles of this Particle System.</para>
+      </summary>
+      <param name="particles">Input particle buffer, containing the desired particle state.</param>
+      <param name="size">The number of elements in the particles array that is written to the Particle System.</param>
+      <param name="offset">The offset into the destination particle list, to assign these particles.</param>
+    </member>
+    <member name="M:UnityEngine.ParticleSystem.SetParticles(Unity.Collections.NativeArray`1&lt;UnityEngine.ParticleSystem/Particle&gt;,System.Int32,System.Int32)">
       <summary>
         <para>Sets the particles of this Particle System.</para>
       </summary>

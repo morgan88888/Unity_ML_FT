@@ -633,7 +633,7 @@ Here is an example of handling the callback:</para>
     </member>
     <member name="P:UnityEngine.Application.targetFrameRate">
       <summary>
-        <para>Instructs game to try to render at a specified frame rate.</para>
+        <para>Instructs the game to try to render at a specified frame rate.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Application.temporaryCachePath">
@@ -9258,7 +9258,7 @@ Note: this value can be set in the Lighting Window UI and it is serialized, that
     </member>
     <member name="P:UnityEngine.GameObject.isStatic">
       <summary>
-        <para>Editor only API that specifies if a game object is static.</para>
+        <para>Gets and sets the GameObject's StaticEditorFlags.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.GameObject.layer">
@@ -19535,7 +19535,17 @@ Use false when you want to use the existing bounding box and reduce the CPU cost
     </member>
     <member name="P:UnityEngine.MeshRenderer.receiveGI">
       <summary>
-        <para>Determines how the object will receive global illumination (Editor only).</para>
+        <para>Determines how the object will receive global illumination. (Editor only)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.MeshRenderer.scaleInLightmap">
+      <summary>
+        <para>Specifies the relative lightmap resolution of this object. (Editor only)</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.MeshRenderer.stitchLightmapSeams">
+      <summary>
+        <para>When enabled, seams in baked lightmaps will get smoothed. (Editor only)</para>
       </summary>
     </member>
     <member name="P:UnityEngine.MeshRenderer.subMeshStartIndex">
@@ -30924,12 +30934,12 @@ Updating a probe's cubemap is a costly operation. Unity needs to render the enti
     </member>
     <member name="T:UnityEngine.Rendering.ScriptableRenderContext">
       <summary>
-        <para>Defines state and drawing commands used in a custom render pipelines.</para>
+        <para>Defines state and drawing commands that custom render pipelines use.</para>
       </summary>
     </member>
     <member name="M:UnityEngine.Rendering.ScriptableRenderContext.BeginRenderPass(System.Int32,System.Int32,System.Int32,Unity.Collections.NativeArray`1&lt;UnityEngine.Rendering.AttachmentDescriptor&gt;,System.Int32)">
       <summary>
-        <para>Begins a new render pass. Only one render pass can be active.</para>
+        <para>Schedules the beginning of a new render pass. Only one render pass can be active at any time.</para>
       </summary>
       <param name="width">The width of the render pass surfaces in pixels.</param>
       <param name="height">The height of the render pass surfaces in pixels.</param>
@@ -30939,7 +30949,7 @@ Updating a probe's cubemap is a costly operation. Unity needs to render the enti
     </member>
     <member name="M:UnityEngine.Rendering.ScriptableRenderContext.BeginScopedRenderPass(System.Int32,System.Int32,System.Int32,Unity.Collections.NativeArray`1&lt;UnityEngine.Rendering.AttachmentDescriptor&gt;,System.Int32)">
       <summary>
-        <para>Begins a new render pass. Only one render pass can be active.</para>
+        <para>Schedules the beginning of a new render pass. If you call this a using-statement, Unity calls EndRenderPass automatically when exiting the using-block. Only one render pass can be active at any time.</para>
       </summary>
       <param name="width">The width of the render pass surfaces in pixels.</param>
       <param name="height">The height of the render pass surfaces in pixels.</param>
@@ -30949,7 +30959,8 @@ Updating a probe's cubemap is a costly operation. Unity needs to render the enti
     </member>
     <member name="M:UnityEngine.Rendering.ScriptableRenderContext.BeginScopedSubPass(Unity.Collections.NativeArray`1&lt;System.Int32&gt;,Unity.Collections.NativeArray`1&lt;System.Int32&gt;,System.Boolean)">
       <summary>
-        <para>Begins a new sub pass within a render pass. Render passes can never be standalone, they must always contain at least one sub pass. Only one sub pass can be active.</para>
+        <para>Schedules the beginning of a new sub pass within a render pass. If you call this in a using-statement, Unity executes EndSubPass automatically when exiting the using-block.
+Render passes can never be standalone, they must always contain at least one sub pass. Only one sub pass can be active at any time.</para>
       </summary>
       <param name="colors">Array of attachments to be used as the color render targets in this sub pass. These are specificed as indices into the array passed to BeginRenderPass. The values in the array are copied immediately.</param>
       <param name="inputs">Array of attachments to be used as input attachments in this sub pass. These are specificed as indices into the array passed to BeginRenderPass. The values in the array are copied immediately.</param>
@@ -30957,7 +30968,8 @@ Updating a probe's cubemap is a costly operation. Unity needs to render the enti
     </member>
     <member name="M:UnityEngine.Rendering.ScriptableRenderContext.BeginScopedSubPass(Unity.Collections.NativeArray`1&lt;System.Int32&gt;,System.Boolean)">
       <summary>
-        <para>Begins a new sub pass within a render pass. Render passes can never be standalone, they must always contain at least one sub pass. Only one sub pass can be active.</para>
+        <para>Schedules the beginning of a new sub pass within a render pass. If you call this in a using-statement, Unity executes EndSubPass automatically when exiting the using-block.
+Render passes can never be standalone, they must always contain at least one sub pass. Only one sub pass can be active at any time.</para>
       </summary>
       <param name="colors">Array of attachments to be used as the color render targets in this sub pass. These are specificed as indices into the array passed to BeginRenderPass. The values in the array are copied immediately.</param>
       <param name="inputs">Array of attachments to be used as input attachments in this sub pass. These are specificed as indices into the array passed to BeginRenderPass. The values in the array are copied immediately.</param>
@@ -30965,7 +30977,7 @@ Updating a probe's cubemap is a costly operation. Unity needs to render the enti
     </member>
     <member name="M:UnityEngine.Rendering.ScriptableRenderContext.BeginSubPass(Unity.Collections.NativeArray`1&lt;System.Int32&gt;,Unity.Collections.NativeArray`1&lt;System.Int32&gt;,System.Boolean)">
       <summary>
-        <para>Begins a new sub pass within a render pass. Render passes can never be standalone, they must always contain at least one sub pass. Only one sub pass can be active.</para>
+        <para>Schedules the beginning of a new sub pass within a render pass. Render passes can never be standalone, they must always contain at least one sub pass. Only one sub pass can be active at any time.</para>
       </summary>
       <param name="colors">Array of attachments to be used as the color render targets in this sub pass. These are specificed as indices into the array passed to BeginRenderPass.</param>
       <param name="inputs">Array of attachments to be used as input attachments in this sub pass. These are specificed as indices into the array passed to BeginRenderPass.</param>
@@ -30973,15 +30985,15 @@ Updating a probe's cubemap is a costly operation. Unity needs to render the enti
     </member>
     <member name="M:UnityEngine.Rendering.ScriptableRenderContext.BeginSubPass(Unity.Collections.NativeArray`1&lt;System.Int32&gt;,System.Boolean)">
       <summary>
-        <para>Begins a new sub pass within a render pass. Render passes can never be standalone, they must always contain at least one sub pass. Only one sub pass can be active.</para>
+        <para>Schedules the beginning of a new sub pass within a render pass. Render passes can never be standalone, they must always contain at least one sub pass. Only one sub pass can be active at any time.</para>
       </summary>
       <param name="colors">Array of attachments to be used as the color render targets in this sub pass. These are specificed as indices into the array passed to BeginRenderPass.</param>
       <param name="inputs">Array of attachments to be used as input attachments in this sub pass. These are specificed as indices into the array passed to BeginRenderPass.</param>
       <param name="isDepthReadOnly">If true, the depth attachment is read-only in this sub pass. Some renderers require this in order to be able to use the depth attachment as input.</param>
     </member>
-    <member name="M:UnityEngine.Rendering.ScriptableRenderContext.Cull">
+    <member name="M:UnityEngine.Rendering.ScriptableRenderContext.Cull(UnityEngine.Rendering.ScriptableCullingParameters&amp;)">
       <summary>
-        <para>Perform culling.</para>
+        <para>Performs culling based on the ScriptableCullingParameters typically obtained from the Camera currently being rendered.</para>
       </summary>
       <param name="parameters">Parameters for culling.</param>
       <returns>
@@ -30990,168 +31002,101 @@ Updating a probe's cubemap is a costly operation. Unity needs to render the enti
     </member>
     <member name="M:UnityEngine.Rendering.ScriptableRenderContext.DrawGizmos(UnityEngine.Camera,UnityEngine.Rendering.GizmoSubset)">
       <summary>
-        <para>Draw a subset of Gizmos (before or after postprocessing) for the given camera.</para>
+        <para>Schedules the drawing of a subset of Gizmos (before or after post-processing) for the given Camera.</para>
       </summary>
       <param name="camera">The camera of the current view.</param>
       <param name="gizmoSubset">Set to GizmoSubset.PreImageEffects to draw Gizmos that should be affected by postprocessing, or GizmoSubset.PostImageEffects to draw Gizmos that should not be affected by postprocessing. See also: GizmoSubset.</param>
     </member>
-    <member name="M:UnityEngine.Rendering.ScriptableRenderContext.DrawRenderers">
+    <member name="M:UnityEngine.Rendering.ScriptableRenderContext.DrawRenderers(UnityEngine.Rendering.CullingResults,UnityEngine.Rendering.DrawingSettings&amp;,UnityEngine.Rendering.FilteringSettings&amp;)">
       <summary>
-        <para>Draw subset of visible objects.</para>
+        <para>Schedules the drawing of a subset of visible GameObjects.</para>
       </summary>
+      <param name="cullingResults">Specifies which set of visible objects to draw, typically obtained from Cull.</param>
+      <param name="drawingSettings">Specifies how to draw GameObjects.</param>
+      <param name="filteringSettings">Specifies how the render pipeline should further filter the Renderers in the Scene.</param>
       <param name="stateBlock">Specifies parts of the render state to override.</param>
-      <param name="stateMap">Specifies parts of the render state to override for specific render types.</param>
-      <param name="renderers">Specifies which set of visible objects to draw.</param>
-      <param name="drawSettings">Specifies how to draw the objects.</param>
-      <param name="filterSettings">Specifies how the renderers should be further filtered.</param>
+      <param name="renderTypes">Specifies render types whose render states are overridden.</param>
+      <param name="stateBlocks">Specifies parts of the render state to override for specific render types.</param>
     </member>
-    <member name="M:UnityEngine.Rendering.ScriptableRenderContext.DrawRenderers">
+    <member name="M:UnityEngine.Rendering.ScriptableRenderContext.DrawRenderers(UnityEngine.Rendering.CullingResults,UnityEngine.Rendering.DrawingSettings&amp;,UnityEngine.Rendering.FilteringSettings&amp;,UnityEngine.Rendering.RenderStateBlock&amp;)">
       <summary>
-        <para>Draw subset of visible objects.</para>
+        <para>Schedules the drawing of a subset of visible GameObjects.</para>
       </summary>
+      <param name="cullingResults">Specifies which set of visible objects to draw, typically obtained from Cull.</param>
+      <param name="drawingSettings">Specifies how to draw GameObjects.</param>
+      <param name="filteringSettings">Specifies how the render pipeline should further filter the Renderers in the Scene.</param>
       <param name="stateBlock">Specifies parts of the render state to override.</param>
-      <param name="stateMap">Specifies parts of the render state to override for specific render types.</param>
-      <param name="renderers">Specifies which set of visible objects to draw.</param>
-      <param name="drawSettings">Specifies how to draw the objects.</param>
-      <param name="filterSettings">Specifies how the renderers should be further filtered.</param>
+      <param name="renderTypes">Specifies render types whose render states are overridden.</param>
+      <param name="stateBlocks">Specifies parts of the render state to override for specific render types.</param>
     </member>
-    <member name="M:UnityEngine.Rendering.ScriptableRenderContext.DrawRenderers">
+    <member name="M:UnityEngine.Rendering.ScriptableRenderContext.DrawRenderers(UnityEngine.Rendering.CullingResults,UnityEngine.Rendering.DrawingSettings&amp;,UnityEngine.Rendering.FilteringSettings&amp;,Unity.Collections.NativeArray`1&lt;UnityEngine.Rendering.ShaderTagId&gt;,Unity.Collections.NativeArray`1&lt;UnityEngine.Rendering.RenderStateBlock&gt;)">
       <summary>
-        <para>Draw subset of visible objects.</para>
+        <para>Schedules the drawing of a subset of visible GameObjects.</para>
       </summary>
+      <param name="cullingResults">Specifies which set of visible objects to draw, typically obtained from Cull.</param>
+      <param name="drawingSettings">Specifies how to draw GameObjects.</param>
+      <param name="filteringSettings">Specifies how the render pipeline should further filter the Renderers in the Scene.</param>
       <param name="stateBlock">Specifies parts of the render state to override.</param>
-      <param name="stateMap">Specifies parts of the render state to override for specific render types.</param>
-      <param name="renderers">Specifies which set of visible objects to draw.</param>
-      <param name="drawSettings">Specifies how to draw the objects.</param>
-      <param name="filterSettings">Specifies how the renderers should be further filtered.</param>
+      <param name="renderTypes">Specifies render types whose render states are overridden.</param>
+      <param name="stateBlocks">Specifies parts of the render state to override for specific render types.</param>
     </member>
     <member name="M:UnityEngine.Rendering.ScriptableRenderContext.DrawShadows(UnityEngine.Rendering.ShadowDrawingSettings&amp;)">
       <summary>
-        <para>Draw shadow casters for a single light.</para>
+        <para>Schedules the drawing of shadow casters for a single Light.</para>
       </summary>
       <param name="settings">Specifies which set of shadow casters to draw, and how to draw them.</param>
     </member>
     <member name="M:UnityEngine.Rendering.ScriptableRenderContext.DrawSkybox(UnityEngine.Camera)">
       <summary>
-        <para>Draw skybox.</para>
+        <para>Schedules the drawing of the skybox.</para>
       </summary>
       <param name="camera">Camera to draw the skybox for.</param>
     </member>
     <member name="M:UnityEngine.Rendering.ScriptableRenderContext.EmitWorldGeometryForSceneView(UnityEngine.Camera)">
       <summary>
-        <para>Emit UI geometry into the Scene view for rendering.</para>
+        <para>Emits UI geometry into the Scene view for rendering.</para>
       </summary>
       <param name="cullingCamera">Camera to emit the geometry for.</param>
     </member>
     <member name="M:UnityEngine.Rendering.ScriptableRenderContext.EndRenderPass">
       <summary>
-        <para>Ends the current render pass.</para>
+        <para>Schedules the end of a currently active render pass.</para>
       </summary>
     </member>
     <member name="M:UnityEngine.Rendering.ScriptableRenderContext.EndSubPass">
       <summary>
-        <para>Ends the current sub pass.</para>
+        <para>Schedules the end of the currently active sub pass.</para>
       </summary>
     </member>
     <member name="M:UnityEngine.Rendering.ScriptableRenderContext.ExecuteCommandBuffer(UnityEngine.Rendering.CommandBuffer)">
       <summary>
-        <para>Execute a custom graphics command buffer.</para>
+        <para>Schedules the execution of a custom graphics Command Buffer.</para>
       </summary>
-      <param name="commandBuffer">Command buffer to execute.</param>
+      <param name="commandBuffer">Specifies the Command Buffer to execute.</param>
     </member>
     <member name="M:UnityEngine.Rendering.ScriptableRenderContext.ExecuteCommandBufferAsync(UnityEngine.Rendering.CommandBuffer,UnityEngine.Rendering.ComputeQueueType)">
       <summary>
-        <para>Executes a command buffer on an async compute queue with the queue selected based on the ComputeQueueType parameter passed.
-
-It is required that all of the commands within the command buffer be of a type suitable for execution on the async compute queues. If the buffer contains any commands that are not appropriate then an error will be logged and displayed in the editor window.  Specifically the following commands are permitted in a CommandBuffer intended for async execution:
-
-CommandBuffer.BeginSample
-
-CommandBuffer.CopyCounterValue
-
-CommandBuffer.CopyTexture
-
-CommandBuffer.CreateGPUFence
-
-CommandBuffer.DisableShaderKeyword
-
-CommandBuffer.DispatchCompute
-
-CommandBuffer.EnableShaderKeyword
-
-CommandBuffer.EndSample
-
-CommandBuffer.GetTemporaryRT
-
-CommandBuffer.GetTemporaryRTArray
-
-CommandBuffer.IssuePluginEvent
-
-CommandBuffer.ReleaseTemporaryRT
-
-CommandBuffer.SetComputeBufferParam
-
-CommandBuffer.SetComputeFloatParam
-
-CommandBuffer.SetComputeFloatParams
-
-CommandBuffer.SetComputeIntParam
-
-CommandBuffer.SetComputeIntParams
-
-CommandBuffer.SetComputeMatrixArrayParam
-
-CommandBuffer.SetComputeMatrixParam
-
-CommandBuffer.SetComputeTextureParam
-
-CommandBuffer.SetComputeVectorParam
-
-CommandBuffer.SetComputeVectorArrayParam
-
-CommandBuffer.SetGlobalBuffer
-
-CommandBuffer.SetGlobalColor
-
-CommandBuffer.SetGlobalFloat
-
-CommandBuffer.SetGlobalFloatArray
-
-CommandBuffer.SetGlobalInt
-
-CommandBuffer.SetGlobalMatrix
-
-CommandBuffer.SetGlobalMatrixArray
-
-CommandBuffer.SetGlobalTexture
-
-CommandBuffer.SetGlobalVector
-
-CommandBuffer.SetGlobalVectorArray
-
-CommandBuffer.WaitOnGPUFence
-
-All of the commands within the buffer are guaranteed to be executed on the same queue. If the target platform does not support async compute queues then the work is dispatched on the graphics queue.</para>
+        <para>Schedules the execution of a Command Buffer on an async compute queue. The ComputeQueueType that you pass in determines the queue order.</para>
       </summary>
       <param name="commandBuffer">The CommandBuffer to be executed.</param>
       <param name="queueType">Describes the desired async compute queue the supplied CommandBuffer should be executed on.</param>
     </member>
     <member name="M:UnityEngine.Rendering.ScriptableRenderContext.InvokeOnRenderObjectCallback">
       <summary>
-        <para>Use this function to invoke the OnRenderObject callback for MonoBehaviour scripts.</para>
+        <para>Schedules an invocation of the OnRenderObject callback for MonoBehaviour scripts.</para>
       </summary>
     </member>
-    <member name="M:UnityEngine.Rendering.ScriptableRenderContext.SetupCameraProperties(UnityEngine.Camera)">
+    <member name="M:UnityEngine.Rendering.ScriptableRenderContext.SetupCameraProperties(UnityEngine.Camera,System.Boolean)">
       <summary>
-        <para>Setup camera specific global shader variables.</para>
+        <para>Schedules the setup of Camera specific global Shader variables.</para>
       </summary>
       <param name="camera">Camera to setup shader variables for.</param>
       <param name="stereoSetup">Set up the stereo shader variables and state.</param>
       <param name="eye">The current eye to be rendered.</param>
     </member>
-    <member name="M:UnityEngine.Rendering.ScriptableRenderContext.SetupCameraProperties(UnityEngine.Camera,System.Boolean)">
+    <member name="M:UnityEngine.Rendering.ScriptableRenderContext.SetupCameraProperties(UnityEngine.Camera,System.Boolean,System.Int32)">
       <summary>
-        <para>Setup camera specific global shader variables.</para>
+        <para>Schedules the setup of Camera specific global Shader variables.</para>
       </summary>
       <param name="camera">Camera to setup shader variables for.</param>
       <param name="stereoSetup">Set up the stereo shader variables and state.</param>
@@ -31159,27 +31104,51 @@ All of the commands within the buffer are guaranteed to be executed on the same 
     </member>
     <member name="M:UnityEngine.Rendering.ScriptableRenderContext.StartMultiEye(UnityEngine.Camera)">
       <summary>
-        <para>Fine-grain control to begin stereo rendering on the scriptable render context.</para>
+        <para>Schedules a fine-grained beginning of stereo rendering on the ScriptableRenderContext.</para>
+      </summary>
+      <param name="camera">Camera to enable stereo rendering on.</param>
+      <param name="eye">The current eye to be rendered.</param>
+    </member>
+    <member name="M:UnityEngine.Rendering.ScriptableRenderContext.StartMultiEye(UnityEngine.Camera,System.Int32)">
+      <summary>
+        <para>Schedules a fine-grained beginning of stereo rendering on the ScriptableRenderContext.</para>
       </summary>
       <param name="camera">Camera to enable stereo rendering on.</param>
       <param name="eye">The current eye to be rendered.</param>
     </member>
     <member name="M:UnityEngine.Rendering.ScriptableRenderContext.StereoEndRender(UnityEngine.Camera)">
       <summary>
-        <para>Indicate completion of stereo rendering on a single frame.</para>
+        <para>Schedule notification of completion of stereo rendering on a single frame.</para>
       </summary>
       <param name="camera">Camera to indicate completion of stereo rendering.</param>
       <param name="eye">The current eye to be rendered.</param>
+      <param name="isFinalPass"></param>
+    </member>
+    <member name="M:UnityEngine.Rendering.ScriptableRenderContext.StereoEndRender(UnityEngine.Camera,System.Int32)">
+      <summary>
+        <para>Schedule notification of completion of stereo rendering on a single frame.</para>
+      </summary>
+      <param name="camera">Camera to indicate completion of stereo rendering.</param>
+      <param name="eye">The current eye to be rendered.</param>
+      <param name="isFinalPass"></param>
+    </member>
+    <member name="M:UnityEngine.Rendering.ScriptableRenderContext.StereoEndRender(UnityEngine.Camera,System.Int32,System.Boolean)">
+      <summary>
+        <para>Schedule notification of completion of stereo rendering on a single frame.</para>
+      </summary>
+      <param name="camera">Camera to indicate completion of stereo rendering.</param>
+      <param name="eye">The current eye to be rendered.</param>
+      <param name="isFinalPass"></param>
     </member>
     <member name="M:UnityEngine.Rendering.ScriptableRenderContext.StopMultiEye(UnityEngine.Camera)">
       <summary>
-        <para>Stop stereo rendering on the scriptable render context.</para>
+        <para>Schedules a stop of stereo rendering on the ScriptableRenderContext.</para>
       </summary>
       <param name="camera">Camera to disable stereo rendering on.</param>
     </member>
     <member name="M:UnityEngine.Rendering.ScriptableRenderContext.Submit">
       <summary>
-        <para>Submit rendering loop for execution.</para>
+        <para>Submits all the scheduled commands to the rendering loop for execution.</para>
       </summary>
     </member>
     <member name="T:UnityEngine.Rendering.ShaderKeyword">
@@ -31332,6 +31301,16 @@ All of the commands within the buffer are guaranteed to be executed on the same 
     <member name="F:UnityEngine.Rendering.ShaderPropertyFlags.HideInInspector">
       <summary>
         <para>Signifies that Unity hides the property in the default Material Inspector.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.ShaderPropertyFlags.MainColor">
+      <summary>
+        <para>Signifies that value of this property contains material color.</para>
+      </summary>
+    </member>
+    <member name="F:UnityEngine.Rendering.ShaderPropertyFlags.MainTexture">
+      <summary>
+        <para>Signifies that value of this property contains material main texture.</para>
       </summary>
     </member>
     <member name="F:UnityEngine.Rendering.ShaderPropertyFlags.None">

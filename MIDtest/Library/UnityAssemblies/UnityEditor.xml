@@ -17948,6 +17948,11 @@ MYCOMPUTER\SHAREDFOLDER\.</para>
         <para>Show the editor window in the auxiliary window.</para>
       </summary>
     </member>
+    <member name="M:UnityEditor.EditorWindow.ShowModal">
+      <summary>
+        <para>Show modal editor window.</para>
+      </summary>
+    </member>
     <member name="M:UnityEditor.EditorWindow.ShowModalUtility">
       <summary>
         <para>Show the EditorWindow as a floating modal window.</para>
@@ -22944,10 +22949,10 @@ If the Unity Editor setting "Auto-Update" is set to enabled, editing a script ou
     </member>
     <member name="M:UnityEditor.GameObjectUtility.SetStaticEditorFlags(UnityEngine.GameObject,UnityEditor.StaticEditorFlags)">
       <summary>
-        <para>Sets the static editor flags on the specified GameObject.</para>
+        <para>Sets the StaticEditorFlags of the specified GameObject.</para>
       </summary>
-      <param name="go">The GameObject whose static editor flags you want to set.</param>
-      <param name="flags">The flags to set on the GameObject.</param>
+      <param name="go">The GameObject whose Static Editor Flags you want to set.</param>
+      <param name="flags">The StaticEditorFlags to set on the GameObject.</param>
     </member>
     <member name="T:UnityEditor.GenericMenu">
       <summary>
@@ -41733,47 +41738,47 @@ See PrefabUtility.IsDefaultOverride for more information.</para>
     </member>
     <member name="T:UnityEditor.StaticEditorFlags">
       <summary>
-        <para>Static Editor Flags.</para>
+        <para>Describes which Unity systems consider the GameObject as static, and include the GameObject in their precomputations in the Unity Editor.</para>
       </summary>
     </member>
     <member name="F:UnityEditor.StaticEditorFlags.BatchingStatic">
       <summary>
-        <para>Consider for static batching.</para>
+        <para>Combine the GameObject's Mesh with other eligible Meshes, to potentially reduce runtime rendering costs.</para>
       </summary>
     </member>
     <member name="F:UnityEditor.StaticEditorFlags.ContributeGI">
       <summary>
-        <para>If enabled the object will be considered by the lightmapper and contribute to Global Illumination. Please see ReceiveGI to select how it will receive Global Illumination.</para>
+        <para>Include the GameObject when precomputing lighting data.</para>
       </summary>
     </member>
     <member name="F:UnityEditor.StaticEditorFlags.LightmapStatic">
       <summary>
-        <para>Considered static for lightmapping.</para>
+        <para>Include the GameObject when precomputing lighting data.</para>
       </summary>
     </member>
     <member name="F:UnityEditor.StaticEditorFlags.NavigationStatic">
       <summary>
-        <para>Considered static for navigation.</para>
+        <para>Include the GameObject when precomputing navigation data.</para>
       </summary>
     </member>
     <member name="F:UnityEditor.StaticEditorFlags.OccludeeStatic">
       <summary>
-        <para>Considered static for occlusion.</para>
+        <para>Mark the GameObject as a Static Occludee in the occlusion culling system.</para>
       </summary>
     </member>
     <member name="F:UnityEditor.StaticEditorFlags.OccluderStatic">
       <summary>
-        <para>Considered static for occlusion.</para>
+        <para>Mark the GameObject as a Static Occluder in the occlusion culling system.</para>
       </summary>
     </member>
     <member name="F:UnityEditor.StaticEditorFlags.OffMeshLinkGeneration">
       <summary>
-        <para>Auto-generate OffMeshLink.</para>
+        <para>Attempt to generate an Off-Mesh Link that starts from this GameObject when precomputing navigation data.</para>
       </summary>
     </member>
     <member name="F:UnityEditor.StaticEditorFlags.ReflectionProbeStatic">
       <summary>
-        <para>Consider static for reflection probe.</para>
+        <para>Include this GameObject when when precomputing data for Reflection Probes whose Type property is set to Baked.</para>
       </summary>
     </member>
     <member name="T:UnityEditor.StaticOcclusionCulling">

@@ -552,13 +552,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.038627177, y: -0.36118093, z: -0.014976149, w: 0.931575}
-  m_LocalPosition: {x: 3.716, y: 1.304, z: -4.201}
+  m_LocalRotation: {x: 0.041263856, y: -0.0890642, z: -0.0036929986, w: 0.9951639}
+  m_LocalPosition: {x: 1.28, y: 1.34, z: -4.64}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 3.5060003, y: -42.482002, z: -3.2050002}
+  m_LocalEulerAnglesHint: {x: 4.6730003, y: -10.2630005, z: -0.845}
 --- !u!1 &1077676816
 GameObject:
   m_ObjectHideFlags: 0
@@ -777,7 +777,7 @@ Rigidbody:
   m_GameObject: {fileID: 1584527955}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 2
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -800,7 +800,7 @@ MonoBehaviour:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
   maxStep: 1000
-  speed: 397
+  speed: 1000
 --- !u!114 &1584527958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -819,7 +819,7 @@ MonoBehaviour:
     vectorActionSize: 0100000001000000
     vectorActionDescriptions: []
     vectorActionSpaceType: 0
-  m_Model: {fileID: 5022602860645237092, guid: 4c9896a94357ec645abaf4c09fae71af, type: 3}
+  m_Model: {fileID: 5022602860645237092, guid: 6e92edaeec55e5c42b79b2179792374c, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: CrazyBrain
@@ -922,7 +922,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 4
   m_CollisionDetection: 0
 --- !u!114 &1665849012
 MonoBehaviour:

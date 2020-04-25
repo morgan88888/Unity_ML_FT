@@ -589,6 +589,12 @@ Only one class at any one time should set defaultBrush to true.</para>
         <para>Gets the anchor point of tiles in the Tilemap.</para>
       </summary>
     </member>
+    <member name="?:UnityEngine.Tilemaps.Tilemap.tilemapTileChanged(System.Action`2&lt;UnityEngine.Tilemaps.Tilemap,UnityEngine.Tilemaps.Tilemap/SyncTile[]&gt;)">
+      <summary>
+        <para>Callback when Tiles on a Tilemap have changed.</para>
+      </summary>
+      <param name="value">Callback to be set by a user to be notified when Tiles changed on a Tilemap.</param>
+    </member>
     <member name="M:UnityEngine.Tilemaps.Tilemap.AddTileFlags(UnityEngine.Vector3Int,UnityEngine.Tilemaps.TileFlags)">
       <summary>
         <para>Adds the TileFlags onto the Tile at the given position.</para>
@@ -983,6 +989,26 @@ Only one class at any one time should set defaultBrush to true.</para>
       </summary>
       <param name="changeTile">Tile to swap.</param>
       <param name="newTile">Tile to swap to.</param>
+    </member>
+    <member name="T:UnityEngine.Tilemaps.Tilemap.SyncTile">
+      <summary>
+        <para>A Struct for containing changes to a Tile when it has been changed on a Tilemap.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.Tilemap.SyncTile.position">
+      <summary>
+        <para>The position of the Tile on a Tilemap which has changed.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.Tilemap.SyncTile.tile">
+      <summary>
+        <para>The Tile at the given position on the Tilemap.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Tilemaps.Tilemap.SyncTile.tileData">
+      <summary>
+        <para>The properties of the Tile at the given position on the Tilemap.</para>
+      </summary>
     </member>
     <member name="T:UnityEngine.Tilemaps.TilemapCollider2D">
       <summary>

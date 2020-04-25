@@ -1355,6 +1355,16 @@ Gets the rotation of a specific node.</para>
         <para>Returns true when single pass stereo rendering is disabled and returns false if otherwise.</para>
       </summary>
     </member>
+    <member name="P:UnityEngine.XR.XRDisplaySubsystem.zFar">
+      <summary>
+        <para>Set DisplaySubsystem to use zFar for rendering.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.XR.XRDisplaySubsystem.zNear">
+      <summary>
+        <para>Set DisplaySubsystem to use zNear for rendering.</para>
+      </summary>
+    </member>
     <member name="M:UnityEngine.XR.XRDisplaySubsystem.AddGraphicsThreadMirrorViewBlit(UnityEngine.Rendering.CommandBuffer,System.Boolean)">
       <summary>
         <para>This function records the display subsystem's native blit event to the target command buffer. This function is typically called by a scriptable rendering pipeline.</para>
